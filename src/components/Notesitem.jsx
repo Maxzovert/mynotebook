@@ -1,6 +1,10 @@
 import React from 'react'
+import noteContext from '../context/Notes/noteContext';
+import { useContext } from 'react';
 
 function Notesitem(props) {
+  const context = useContext(noteContext);
+  const {delNote} = context;
     const {note} = props;
   return (
     <div className='col-md-3'>
@@ -10,9 +14,9 @@ function Notesitem(props) {
     <h5 className="card-title">{note.title}</h5>
     <i className="fa-solid fa-pen-to-square" style={{"color": "#74C0FC"}}> Edit</i>
     </div>
-    <p className="card-text">{note.discription} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint odit deleniti aliquam, perspiciatis, minus iste magni incidunt vel quos nam omnis modi aliquid vitae ipsam ex. Aperiam sint iusto aspernatur voluptatem amet.</p>
+    <p className="card-text">{note.discription}</p>
     <div className="d-flex justify-content-between align-items-center">
-    <i className="fa-solid fa-trash" style={{"color": "#74C0FC"}}></i>
+    <i className="fa-solid fa-trash" style={{"color": "#74C0FC"}} onClick={()=>{delNote(note._id)}}></i>
     <button type="button" className="btn btn-info">Tag</button>
     </div>
   </div>
