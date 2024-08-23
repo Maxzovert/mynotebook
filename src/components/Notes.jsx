@@ -3,10 +3,14 @@ import React  from 'react'
 import noteContext from '../context/Notes/noteContext';
 import Notesitem from './Notesitem';
 import Addnote from './Addnote';
+// import { useEffect } from 'react';
 
 function Notes() {
     const context = useContext(noteContext);
     const { notes} = context;
+    // useEffect(()=>{
+    //   getNotes();
+    // },[])
   return (
     <>
     <Addnote/>
