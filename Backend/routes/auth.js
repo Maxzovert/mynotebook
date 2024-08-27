@@ -17,19 +17,20 @@ router.post(
     body("password", "Invalid Password").isLength({ min: 5 }),
   ],
   async (req, res) => {
+    let success = false;
     console.log(req.body);
 
     // Check errors
 
     const result = validationResult(req);
     if (!result.isEmpty()) {
-      return res.status(400).json({ errors: result.array() });
+      return res.status(400).json({ success,errors: result.array() });
     }
 
     try {
       let user = await User.findOne({ email: req.body.email });
       if (user) {
-        return res.status(400).json({ error: "Email exists" });
+        return res.status(400).json({success, error: "Email exists" });
       }
 
       const salt = await bcrypt.genSalt(10);
@@ -47,7 +48,8 @@ router.post(
       };
       const authtoken = jwt.sign(data, JWT_SECRET);
       // console.log(jwtData)
-      res.json({ authtoken });
+      success = true;
+      res.json({ success,authtoken });
     } catch (error) {
       console.error(error.message);
       res.status(500).send("something went wrong");
@@ -63,6 +65,7 @@ router.post(
     body("password", "Password Cannot be blank").exists(),
   ],
   async (req, res) => {
+    let success = false;
     const result = validationResult(req);
     if (!result.isEmpty()) {
       return res.status(400).json({ errors: result.array() });
@@ -71,12 +74,14 @@ router.post(
     try {
       let user = await User.findOne({ email });
       if (!user) {
-        return res.status(400).json({ error: "Enter a valid email" });
+        success = false;
+        return res.status(400).json({ success,error: "Enter a valid email" });
       }
 
       const passwordCompare = await bcrypt.compare(password, user.password);
       if (!passwordCompare) {
-        return res.status(400).json({ error: "Enter correct password" });
+        success = false;
+        return res.status(400).json({ success,error: "Enter correct password" });
       }
 
       const data = {
@@ -85,8 +90,8 @@ router.post(
         },
       };
       const authtoken = jwt.sign(data, JWT_SECRET);
-
-      res.json({ authtoken });
+      success = true;
+      res.json({success,authtoken });
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal server Error");

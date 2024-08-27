@@ -4,13 +4,19 @@ import noteContext from '../context/Notes/noteContext';
 import Notesitem from './Notesitem';
 import Addnote from './Addnote';
 import { useEffect , useRef , useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Notes() {
+function Notes(props) {
   const context = useContext(noteContext);
-  const { notes, getNotes } = context;
+  let navigate = useNavigate();
+  const { notes, getNotes,editNote } = context;
   useEffect(() => {
-    // eslint-disable-next-line
-    getNotes();
+    if(localStorage.getItem('token')){
+      getNotes();
+    }else{
+      navigate("/login")
+    }
+     // eslint-disable-next-line
   }, [])
 
   const ref = useRef(null)
@@ -23,7 +29,9 @@ function Notes() {
     }
   const handleClick = (e) =>{
     console.log("updating..",note)
+    editNote(note.id,note.etitle,note.ediscription,note.etag);
     refclose.current.click();
+    props.showAlert("Note Updated", "success");
 }
 
 const onChange = (e) =>{
@@ -31,7 +39,7 @@ const onChange = (e) =>{
 }
   return (
     <>
-      <Addnote />
+      <Addnote showAlert={props.showAlert}/>
       <button type="button" className="btn btn-primary d-none" ref={ref} data-bs-toggle="modal" data-bs-target="#exampleModal">
             Launch demo modal
           </button>
@@ -46,7 +54,8 @@ const onChange = (e) =>{
             <form>
           <div className="mb-3">
             <label forhtml="etitle" className="form-label">Title</label>
-            <input type="text" className="form-control" id="etitle"  name="etitle" value={note.etitle} aria-describedby="emailHelp" onChange={onChange} />
+            <input type="text" className="form-control" id="etitle"  name="etitle" value={note.etitle} aria-describedby="emailHelp" onChange={onChange} minLength={2} required/>
+
             <div id="emailHelp" className="form-text"></div>
           </div>
           <div className="mb-3">
@@ -68,8 +77,11 @@ const onChange = (e) =>{
       </div>
       <div className="row my-3">
         <h1>Your Notes</h1>
+        <div className="container">
+        {notes.length===0 && "Add your first Note"}
+        </div>
         {notes.map((note) => {
-          return <Notesitem key={note._id} updateNote={updateNote} note={note} />
+          return <Notesitem key={note._id} updateNote={updateNote} note={note} showAlert={props.showAlert}/>
         })}
       </div>
     </>
