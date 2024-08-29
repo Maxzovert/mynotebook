@@ -4,7 +4,7 @@ import noteContext from '../context/Notes/noteContext';
 import Notesitem from './Notesitem';
 import Addnote from './Addnote';
 import { useEffect , useRef , useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 
 function Notes(props) {
   const context = useContext(noteContext);
