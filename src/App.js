@@ -13,11 +13,13 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import { useEffect, useState } from 'react';
 import GetStarted from './components/GetStarted';
+import Loginsignup from './components/Loginsignup';
 
 function App() {
   const [alert,setAlert]=useState(null);  
   const [showWel , setShowWel] = useState(true);  
   const [isAuthenticated, setIsAuthenticated] = useState(false); 
+  const [showLogSign, setShowLogSign] = useState(false); 
   const showAlert = (message,type)=>{
     setAlert({
       msg:message,
@@ -38,21 +40,27 @@ function App() {
     <>
     <NoteState>
     <Router>
+    {isAuthenticated &&<Navbar/>}
     <Alert alert={alert}/>
     <div className="container">
       <Routes>
-        {showWel ? (
-          <Route exact path='/' element={<GetStarted setWelScr={setShowWel}/>}/>
-        ):(
+        {showWel && (
+          <Route exact path='/' element={<GetStarted setWelScr={setShowWel}  setShowLogSign={setShowLogSign}/>}/>
+        )} 
+         {showLogSign && !isAuthenticated && (
+                <Route exact path='/' element={<Loginsignup />} />
+              )}
           <>
+           {!isAuthenticated && (
+                <>
+                  <Route exact path='/login' element={<Login showAlert={showAlert} setIsAuthenticated={setIsAuthenticated} />} />
+                  <Route exact path='/signup' element={<Signup showAlert={showAlert} setIsAuthenticated={setIsAuthenticated} />} />
+                </>
+              )}
           
-          <Route exact path='/login' element={<Login showAlert={showAlert}/>}/>
-          {isAuthenticated && <Navbar/>}
         <Route exact path='/' element={<Home showAlert={showAlert}/>}/>
         <Route exact path='/about' element={<About/>}/>
-        <Route exact path='/signup' element={<Signup showAlert={showAlert}/>}/>
       </>
-      )}
       </Routes>
       </div>
       </Router>

@@ -25,6 +25,7 @@ const Login = (props) => {
             props.setIsAuthenticated(true);
             navigate("/"); // navigate to home page
             props.showAlert("Login Successfully", "success")
+            
 
         } else {
             props.showAlert("Invalide credential", "danger")
