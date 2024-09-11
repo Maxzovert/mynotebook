@@ -11,10 +11,13 @@ import NoteState from './context/Notes/Notestate';
 import Alert from './components/Alert';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import GetStarted from './components/GetStarted';
 
 function App() {
-  const [alert,setAlert]=useState(null);
+  const [alert,setAlert]=useState(null);  
+  const [showWel , setShowWel] = useState(true);  
+  const [isAuthenticated, setIsAuthenticated] = useState(false); 
   const showAlert = (message,type)=>{
     setAlert({
       msg:message,
@@ -24,18 +27,32 @@ function App() {
       setAlert(null)
     },1500)
   }
+
+  useEffect(()=>{
+    if(localStorage.getItem('tokn')){
+      setIsAuthenticated(true)
+    }
+  },[])
+
   return (
     <>
     <NoteState>
     <Router>
-    <Navbar/>
     <Alert alert={alert}/>
     <div className="container">
       <Routes>
+        {showWel ? (
+          <Route exact path='/' element={<GetStarted setWelScr={setShowWel}/>}/>
+        ):(
+          <>
+          
+          <Route exact path='/login' element={<Login showAlert={showAlert}/>}/>
+          {isAuthenticated && <Navbar/>}
         <Route exact path='/' element={<Home showAlert={showAlert}/>}/>
         <Route exact path='/about' element={<About/>}/>
-        <Route exact path='/login' element={<Login showAlert={showAlert}/>}/>
         <Route exact path='/signup' element={<Signup showAlert={showAlert}/>}/>
+      </>
+      )}
       </Routes>
       </div>
       </Router>
