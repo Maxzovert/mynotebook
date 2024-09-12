@@ -33,9 +33,13 @@ const Login = (props) => {
     };
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div className="mb-3">
+        <div className='lg-sn-con'>
+              <div className="rtxt">
+      <h1 style={{color:'yellow'}}>Login<span style={{color:'white'}}>!!</span> </h1>
+         <h1><span>To</span><span style={{color:'yellow'}}>Use</span></h1>
+         </div>
+            <form className='signupform' onSubmit={handleSubmit}>
+                <div className="lg-sn-name fi-lab">
                     <label htmlFor="email" className="form-label">Email address</label>
                     <input
                         type="email"
@@ -47,7 +51,7 @@ const Login = (props) => {
                         onChange={onChange}
                     />
                 </div>
-                <div className="mb-3">
+                <div className="lg-sn-name fi-lab">
                     <label htmlFor="password" className="form-label">Password</label>
                     <input
                         type="password"
@@ -58,7 +62,7 @@ const Login = (props) => {
                         onChange={onChange}
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Login</button>
+                <button type="submit" className="signup-btn">Login</button>
             </form>
         </div>
     );

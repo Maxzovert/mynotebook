@@ -1,5 +1,5 @@
 import React from 'react';
-import './GetStarted.css';
+import './styles/GetStarted.css';
 import Welcomelog from '../Assets/Welcom-logo.png';
 
 const GetStarted = ({ setWelScr , setShowLogSign}) => {
@@ -12,11 +12,11 @@ const GetStarted = ({ setWelScr , setShowLogSign}) => {
 
   return (
     <>
-    <div className='con'>
-        <img src={Welcomelog} alt="Welcome" />
+    <div className='getscon'>
+        <img className='getsimg' src={Welcomelog} alt="Welcome" />
       
-      <p>Welcome to MyNoteBook</p>
-        <button onClick={handleClick}>Get Started</button>
+      <p className='weltext'>Welcome <span style={{color:'yellow'}}>To</span> MyNoteBook</p>
+        <button className='getsbtn' onClick={handleClick}>Get Started</button>
       </div>
     </>
   );

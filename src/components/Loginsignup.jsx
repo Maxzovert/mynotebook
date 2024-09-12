@@ -1,12 +1,10 @@
 import React from 'react'
-import './GetStarted.css';
+import './styles/GetStarted.css';
 import {styled} from 'styled-components'
 import Logsignimg from '../Assets/onee.webp'
 import { useNavigate } from 'react-router-dom';
 
  
-
-
 const Loginsignbtn = styled.div`
     position: relative;
     display: flex;

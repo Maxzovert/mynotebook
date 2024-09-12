@@ -30,11 +30,13 @@ function App() {
     },1500)
   }
 
-  useEffect(()=>{
-    if(localStorage.getItem('tokn')){
-      setIsAuthenticated(true)
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsAuthenticated(true);
+      setShowWel(false)
     }
-  },[])
+  }, []);
 
   return (
     <>
