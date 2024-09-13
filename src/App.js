@@ -42,7 +42,7 @@ function App() {
     <>
     <NoteState>
     <Router>
-    {isAuthenticated &&<Navbar/>}
+    {isAuthenticated &&<Navbar setIsAuthenticated={setIsAuthenticated}/>}
     <Alert alert={alert}/>
     <div className="container">
       <Routes>
