@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE&display=swap');
+.note-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.add-note-txt{
+  font-family: "SUSE", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: #947eab;
+  font-size: 2rem;
+  margin: 1.5rem;
+}
+.note-form {
+  height: 60vh;
+  width: 48vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ebd9ff;
+  border-radius: 30px;
+}
+.note-label{
+  font-family: "SUSE", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color:yellow;
+  font-size: 1.25rem;
+  font-weight: 800;
+  padding-left: 8px;
+  padding-top:2px ;
+  
+}
+.title-con{
+  height: 11vh !important;
+}
+.note-lab{
+  background-color: #c5abdf;
+  border-radius: 12px;
+  width: 45vw;
+  height: 27vh;
+  margin-top: 12px !important;
+}
+
+.note-input{
+  outline: none;
+  border: none;
+  border-radius: 12px ;
+  margin: 10px 0px;
+  height: 4vh;
+  width: 42.2vw;
+  background: #947eab;
+  color: white;
+  padding: 5px 22px 4px 16px;
+  font-size: 1.2rem;
+  margin-bottom: -2px;
+  overflow: hidden !important;
+}
+.disc-input{
+  height: 20vh;
+  width: 40vw;
+  margin-top: 10px;
+  width: 42.2vw !important;
+  overflow: hidden;
+}
+
+.tag-btn-con{
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 42vw;
+}
+.tag-con{
+  margin: 12px 12px;
+  height: 8vh;
+  width: 25vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tag-lab{
+  font-family: "SUSE", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color:yellow;
+  background: #947eab;
+  height: 6vh;
+  width: 4vw;
+  text-align: center;
+  padding-top: 1px;
+  border-radius: 20px;
+  font-size: 1.5rem;
+}
+.tag-input{
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  height: 6vh;
+  width: 20vw;
+  background: #947eab;
+  color: white;
+  font-size: 1.5rem;
+  padding-left: 7px;
+}
+.add-btn{
+  margin: 12px 12px;
+
+}
+::placeholder{
+  color: #ebd9ff;
+}
+
+.add-btn{
+  background: #947eab;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  color: yellow;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 5px;
+  cursor: pointer;
+  height: 6vh;
+  width: 8vw;
+}

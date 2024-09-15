@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useContext } from 'react';
 import noteContext from '../context/Notes/noteContext';
+import './styles/add-notes.css'
 
 
 function Addnote(props) {
@@ -21,24 +22,27 @@ function Addnote(props) {
     }
 
   return (
-    <div>
-        <div className="container my-3">
-        <h1>Add A Note</h1>
-        <form>
-          <div className="mb-3">
-            <label forhtml="title" className="form-label">Title</label>
-            <input type="text" className="form-control" id="title"  name="title" aria-describedby="emailHelp" value={note.title}  onChange={onChange} minLength={2} required/>
+    <div className='main-con'>
+        <div className="note-con">
+        <h1 className='add-note-txt'>Add A Note...</h1>
+        <form className="note-form">
+        <div className="lg-sn-name note-lab title-con">
+            <label forhtml="title" className="note-label">Title</label>
+            <textarea type="text" className="note-input" id="title"  name="title" aria-describedby="emailHelp" value={note.title}  onChange={onChange} minLength={2} required/>
             <div id="emailHelp" className="form-text"></div>
-          </div>
-          <div className="mb-3">
-            <label forhtml="discription" className="form-label">Description</label>
-            <input type="text" className="form-control" id="discription" name="discription" value={note.discription} onChange={onChange} minLength={2} required/>
-          </div>
-          <div className="mb-3">
-            <label forhtml="tag" className="form-label">Tag</label>
-            <input type="text" className="form-control" id="tag" name="tag" value={note.tag} onChange={onChange} minLength={2} required />
-          </div>
-          <button disabled={note.title.length<1 || note.discription.length<1} type="submit" className="btn btn-primary" onClick={handleClick}>Add Note</button>
+            </div>
+            <div className="lg-sn-name note-lab">
+            <label forhtml="discription" className="note-label">Description...</label>
+            <textarea type="text" className="note-input disc-input" id="discription" name="discription" value={note.discription} onChange={onChange} minLength={2} required/>
+            </div>
+            <div className="tag-btn-con">
+              <div className="tag-con">
+            <label forhtml="tag" className="tag-lab">Tag</label>
+            <input type="text" placeholder='Add Tag..' className="tag-input" id="tag" name="tag" value={note.tag} onChange={onChange} minLength={2} required />
+            </div>
+          <button disabled={note.title.length<1 || note.discription.length<1} type="submit" className="add-btn" onClick={handleClick}>Done</button>
+            </div>
+
         </form>
       </div>
     </div>
