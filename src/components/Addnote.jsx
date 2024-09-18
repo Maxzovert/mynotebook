@@ -23,6 +23,7 @@ function Addnote(props) {
 
   return (
     <div className='main-con'>
+    <div>
         <div className="note-con">
         <h1 className='add-note-txt'>Add A Note...</h1>
         <form className="note-form">
@@ -45,6 +46,7 @@ function Addnote(props) {
 
         </form>
       </div>
+    </div>
     </div>
   )
 }

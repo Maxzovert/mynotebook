@@ -42,3 +42,13 @@
     margin: 5px;
     cursor : pointer;
 }
+
+
+
+.left-con{
+    background: #b7a1cd;
+    width: 30vw;
+    height: 90vh;
+    border-radius: 0 35px 35px 0px;
+    margin-top: 3vh;
+}
