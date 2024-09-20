@@ -1,0 +1,40 @@
+.card-main{
+
+}
+.card-body{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 15vw;
+    justify-content: space-between;
+    border: 0.5rem solid #947eab;
+    border-radius: 10%;
+    margin: 12px;
+}
+.card-add{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 8px;
+}
+.card-top{
+    background: #c5abdf;
+    border-radius: 9px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+.card-mid{
+    font-size: 1rem;
+    overflow: hidden; /* Hide any overflowing text */
+}
+.card-foot{
+    background: #c5abdf;
+    border-radius: 9px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 1.2rem;
+}

@@ -5,6 +5,7 @@ import Notesitem from './Notesitem';
 import Addnote from './Addnote';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './styles/noteitem.css'
 
 function Notes(props) {
   const context = useContext(noteContext);
@@ -75,12 +76,12 @@ function Notes(props) {
           </div>
         </div>
       )}
-
-      <div className="row my-3">
+      <div className="main-card-note">
         <h1>Your Notes</h1>
-        <div className="container">
+        <div className="card-container">
           {notes.length === 0 && "Add your first Note"}
         </div>
+        <div className='card-add'></div>
         {notes.map((note) => {
           return <Notesitem key={note._id} updateNote={updateNote} note={note} showAlert={props.showAlert} />;
         })}
