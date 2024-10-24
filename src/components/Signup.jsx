@@ -41,6 +41,7 @@ const onChange = (e) => {
       <div className="rtxt">
       <h1 style={{color:'yellow'}}>Sign<span style={{color:'white'}}>Up</span> </h1>
          <h1><span>To</span><span style={{color:'yellow'}}>Use</span></h1>
+         <h1><span style={{color:'yellow'}}>SnapNotes</span></h1>
          </div>
       <form className='signupform' onSubmit={handleSubmit}>
   <div className="lg-sn-name fi-lab">

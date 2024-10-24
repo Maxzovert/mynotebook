@@ -33,7 +33,6 @@ function Notes(props) {
     console.log("updating..", note);
     editNote(note.id, note.etitle, note.ediscription, note.etag);
     setModalOpen(false); // Close the modal after updating
-    props.showAlert("Note Updated", "success");
   };
 
   const onChange = (e) => {
@@ -42,7 +41,7 @@ function Notes(props) {
 
   return (
     <>
-      <Addnote showAlert={props.showAlert} />
+      <Addnote/>
 
       {isModalOpen && ( // Conditionally render the modal
         <div className="modal fade show" style={{ display: 'block', backdrop: 'static' }}>
@@ -83,7 +82,7 @@ function Notes(props) {
         </div>
         <div className='card-add'></div>
         {notes.map((note) => {
-          return <Notesitem key={note._id} updateNote={updateNote} note={note} showAlert={props.showAlert} />;
+          return <Notesitem key={note._id} updateNote={updateNote} note={note}/>;
         })}
       </div>
     </>

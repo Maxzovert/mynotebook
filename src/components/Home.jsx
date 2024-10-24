@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Notes from './Notes'; 
+import Left from './Left';
+import Blank from './Blank';
 
+const Home = ({ShowNotescomp}) => {
 
-const Home = (props) => {
-  const {showAlert} = props
+    const [showNote , setShowNote] = useState(false)
+    const [showBlank , setShowBlank] = useState(true)
+
+    function ShowNotescomp () {
+        setShowNote(true)
+        setShowBlank(false)
+    }
+
+  // const {showAlert} = props
   return (
-    <div>
-      
-      <Notes showAlert={showAlert}/>
+    <div className='flex h-screen justify-between'>
+      <Left/>
+      {showBlank && <Blank ShowNotescomp={ShowNotescomp}/>}
+      {!showBlank && <Notes/>}
     </div>
   )
 }

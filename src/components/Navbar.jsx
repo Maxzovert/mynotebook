@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import './styles/navbar.css'
+// import './styles/navbar.css'
 import LoginSigncom from './Loginsignup'
 
 const Navbar = ({ setIsAuthenticated }) => {
@@ -21,13 +21,16 @@ const handleLogout=()=>{
   }, [location, navigate]);
   return (
     <>
-      <div className="nav-main">
-              <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} aria-current="page" to="/about">About</Link>
-              <Link className="nav-logo nav-link" to="/">Tag-Matrix</Link>
-          <button onClick={handleLogout} className="logout-btn">Logout</button>  
+      <div className="flex justify-around w-full bg-violet-400 h-16">
+              <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""} mt-3 px-4 py-2 text-sm font-bold  bg-violet-300 rounded-md h-10 w-1/6 text-center text-yellow-300 hover:text-yellow-400 sm:text-3xl sm:py-0`}  aria-current="page" to="/about">About</Link>
+
+              <Link className="mt-3 py-2 px-4 text-sm font-bold  bg-violet-300 rounded-md h-10 w-1/4 text-center text-yellow-300 hover:text-yellow-400 sm:text-3xl sm:py-0" to="/">
+              SNAPNOTES</Link>
+
+          <button onClick={handleLogout} className="mt-3 px-4 text-sm font-bold  bg-violet-300 rounded-md h-10 w-1/6 text-center text-yellow-300 hover:text-yellow-400 sm:text-3xl">Logout</button>
         </div>
     </>
-  )
+    )
 }
 
 export default Navbar
