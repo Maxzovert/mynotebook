@@ -15,7 +15,7 @@ const GetStarted = ({ setWelScr , setShowLogSign}) => {
     <div className='getscon'>
         <img className='getsimg' src={Welcomelog} alt="Welcome" />
       
-      <p className='weltext'>Welcome <span style={{color:'yellow'}}>To</span> MyNoteBook</p>
+      <p className='weltext'>Welcome <span style={{color:'yellow'}}>To</span> SnapNotes</p>
         <button className='getsbtn' onClick={handleClick}>Get Started &gt; &gt; &gt; &gt;</button>
       </div>
     </>
