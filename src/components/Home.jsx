@@ -15,10 +15,14 @@ const Home = ({ShowNotescomp}) => {
 
   // const {showAlert} = props
   return (
-    <div className='flex h-screen justify-between'>
+    <div className='flex h-screen justify-between '>
       <Left/>
+      {/* <div className='flex justify-center flex-row w-1/4'> */}
       {showBlank && <Blank ShowNotescomp={ShowNotescomp}/>}
+      {/* </div> */}
+      <div className='flex  flex-col'>
       {!showBlank && <Notes/>}
+      </div>
     </div>
   )
 }

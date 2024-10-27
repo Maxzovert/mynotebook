@@ -3,8 +3,8 @@ import Button from './Button'
 
 const Left = () => {
   return (
-         <aside className="w-1/3 h-full px-8 py-16 mt-4 bg-violet-400 text-yellow-300 md:w-72 rounded-r-xl">
-      <h2 className="mb-8 font-bold uppercase md:text-xl text-yellow-300">YOur Notes</h2>
+         <aside className="w-1/3 h-full px-8 py-16 mt-4 bg-lgrey text-black md:w-72 rounded-r-xl">
+      <h2 className="mb-8 font-bold uppercase md:text-xl text-black">YOur Notes</h2>
       <div>
            <Button>
             + Add Note

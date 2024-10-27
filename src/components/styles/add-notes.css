@@ -1,38 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=SUSE&display=swap');
-.main-con{
-  display: flex;
-  justify-content: center;
-}
 .note-con {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 1rem;
+  margin-right: -15px;
+
+}
+.form-top{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .add-note-txt{
   font-family: "SUSE", system-ui;
   font-optical-sizing: auto;
   font-style: normal;
-  color: #947eab;
+  color: #eb5e28;
   font-size: 2rem;
   margin: 1.5rem;
+  font-weight: 700;
 }
 .note-form {
-  height: 60vh;
-  width: 48vw;
+  height: 84vh;
+  width: 70vw;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
-  background-color: #ebd9ff;
-  border-radius: 30px;
-  margin-right: 8rem;
+  background-color: #ccc5b9;
+  border-radius: 0.75rem;
+  /* margin-right: 8rem; */
 
 }
 .note-label{
   font-family: "SUSE", system-ui;
   font-optical-sizing: auto;
   font-style: normal;
-  color:yellow;
+  color:#403d39;
   font-size: 1.25rem;
   font-weight: 800;
   padding-left: 8px;
@@ -41,54 +47,64 @@
 }
 .title-con{
   height: 11vh !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
-.note-lab{
-  background-color: #c5abdf;
+
+.title-label{
+
+  text-align: center;
+  margin-top: 15px;
+}
+/* .note-lab{
+  background-color: #252422;
   border-radius: 12px;
   width: 45vw;
   height: 27vh;
   margin-top: 12px !important;
-}
+} */
 
 .note-input{
   outline: none;
   border: none;
   border-radius: 12px ;
   margin: 10px 0px;
-  height: 4vh;
-  width: 42.2vw;
-  background: #947eab;
+  height: 6vh;
+  width: 40%;
+  background: #a8a8a7;
   color: white;
   padding: 5px 22px 4px 16px;
   font-size: 1.2rem;
   margin-bottom: -2px;
+  margin-right: 1rem;
   overflow: hidden !important;
 }
 .disc-input{
-  height: 20vh;
-  width: 40vw;
-  margin-top: 10px;
-  width: 42.2vw !important;
-  overflow: hidden;
+  height: 47vh;
+  width: 90vw;
+  width: 68vw !important;
+  margin: 1rem;
+  margin-top: 5rem;
 }
 
-.tag-btn-con{
+/* .tag-btn-con{
   margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 42vw;
-}
-.tag-con{
+} */
+/* .tag-con{
   margin: 12px 12px;
   height: 8vh;
   width: 25vw;
   display: flex;
   align-items: center;
   justify-content: space-around;
-}
+} */
 
-.tag-lab{
+/* .tag-lab{
   font-family: "SUSE", system-ui;
   font-optical-sizing: auto;
   font-style: normal;
@@ -100,8 +116,8 @@
   padding-top: 1px;
   border-radius: 20px;
   font-size: 1.5rem;
-}
-.tag-input{
+} */
+/* .tag-input{
   outline: none;
   border: none;
   border-radius: 20px;
@@ -111,25 +127,28 @@
   color: white;
   font-size: 1.5rem;
   padding-left: 7px;
-}
+} */
 .add-btn{
   margin: 12px 12px;
-
 }
 ::placeholder{
   color: #ebd9ff;
 }
 
 .add-btn{
-  background: #947eab;
+  background: #eb5e28;
   border: none;
   outline: none;
   border-radius: 20px;
-  color: yellow;
+  color: white;
   font-size: 1.5rem;
   font-weight: 600;
   margin: 5px;
   cursor: pointer;
   height: 6vh;
   width: 8vw;
+}
+.add-btn:hover{
+  color: black;
+  cursor: pointer;
 }
